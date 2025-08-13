@@ -1,2 +1,23 @@
-*AsEnumerable() kullanımı, sorgudaki tüm verilerin öncelikle belleğe alınmasını ve ardından gruplama, filtreleme veya diğer işlemlerin yapılmasını sağlar. Bu durum, özellikle büyük veri setlerinde performansı olumsuz etkileyerek sistemi yavaşlatabilir.
-*AsNoTracking() kullanımı Entity Framework sorgularında nesnelerin değişiklik takibi yapılmadan okunmasını sağlar ve bu sayede bellek kullanımı azalır, sorgu performansı artar.
+Bellek Kullanımı ve Performans Optimizasyonu
+AsEnumerable() kullanımı, sorgudaki tüm verilerin öncelikle belleğe alınmasını ve ardından gruplama, filtreleme veya diğer işlemlerin yapılmasını sağlar.  
+Bu durum, özellikle büyük veri setlerinde performansı olumsuz etkileyerek sistemi yavaşlatabilir.
+
+AsNoTracking() kullanımı ise Entity Framework sorgularında nesnelerin değişiklik takibi yapılmadan okunmasını sağlar.  
+Bu sayede bellek kullanımı azalır ve sorgu performansı artar.
+
+Böyle durumlarda, bazı işlemler AsNoTracking() ile SQL tarafında işlenip bellek kullanımından tasarruf edilirken,  
+küçük işlemler veya veri dönüşümleri C# tarafında gerçekleştirilerek performans optimize edilebilir.  
+Bu yaklaşım, büyük veri işlemlerinin SQL tarafında hızlı bir şekilde yapılmasını, daha küçük ve özelleştirilmiş işlemlerin ise C# tarafında verimli şekilde yürütülmesini sağlar.
+
+Örnek:  
+var productsQuery = context.Products
+    .AsNoTracking()                 // Değişiklik takibini devre dışı bırak
+    .Where(p => p.IsActive)         // SQL tarafında filtreleme
+    .AsEnumerable()                 // SQL sorgusunu çalıştır, sonuçları belleğe al
+    .GroupBy(p => p.CategoryId)     // C# tarafında küçük işlemler
+    .Select(g => new 
+    {
+        CategoryId = g.Key,
+        TotalProducts = g.Count()
+    })
+    .ToList();
