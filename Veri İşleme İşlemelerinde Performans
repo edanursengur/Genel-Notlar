@@ -1,0 +1,1 @@
+AsEnumerable() kullanımı, sorgudaki tüm verilerin öncelikle belleğe alınmasını ve ardından gruplama, filtreleme veya diğer işlemlerin yapılmasını sağlar. Bu durum, özellikle büyük veri setlerinde performansı olumsuz etkileyerek sistemi yavaşlatabilir.
