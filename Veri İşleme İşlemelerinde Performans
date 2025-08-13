@@ -1,4 +1,5 @@
 Bellek Kullanımı ve Performans Optimizasyonu
+AsNoTracking ve AsEnumerable 
 AsEnumerable() kullanımı, sorgudaki tüm verilerin öncelikle belleğe alınmasını ve ardından gruplama, filtreleme veya diğer işlemlerin yapılmasını sağlar.  
 Bu durum, özellikle büyük veri setlerinde performansı olumsuz etkileyerek sistemi yavaşlatabilir. (IEnumerable bir liste olmalı/ value kullanırsak normal listedede yine c#da işlenmeye devam edecektir)
 
@@ -21,3 +22,5 @@ var productsQuery = context.Products
         TotalProducts = g.Count()
     })
     .ToList();
+//////////////////////////////////////////////////
+ToList ve Tolookup
