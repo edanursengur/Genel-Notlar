@@ -1,6 +1,6 @@
 Bellek Kullanımı ve Performans Optimizasyonu
 AsEnumerable() kullanımı, sorgudaki tüm verilerin öncelikle belleğe alınmasını ve ardından gruplama, filtreleme veya diğer işlemlerin yapılmasını sağlar.  
-Bu durum, özellikle büyük veri setlerinde performansı olumsuz etkileyerek sistemi yavaşlatabilir. (IEnumerable bir liste olmalı)
+Bu durum, özellikle büyük veri setlerinde performansı olumsuz etkileyerek sistemi yavaşlatabilir. (IEnumerable bir liste olmalı/ value kullanırsak normal listedede yine c#da işlenmeye devam edecektir)
 
 AsNoTracking() kullanımı ise Entity Framework sorgularında nesnelerin değişiklik takibi yapılmadan okunmasını sağlar.  
 Bu sayede bellek kullanımı azalır ve sorgu performansı artar.
