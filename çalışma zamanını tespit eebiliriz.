@@ -1,0 +1,6 @@
+    Stopwatch sw = new Stopwatch();
+            sw.Start();
+sw.Stop();
+            double gecenSaniye = sw.Elapsed.TotalSeconds;
+            double gecenMilisaniye = sw.Elapsed.TotalMilliseconds;
+            var kontrol = gecenMilisaniye;
