@@ -29,4 +29,7 @@ Entity’leri memory’de izlemiyor
 Change tracker oluşturulmuyor
 Bu yüzden okuma (read-only) işlemleri daha hızlı
 //////////////////////////////////////////////////
-ToList ve Tolookup
+Neden Dapper daha hızlı?
+Dapper: tamamen raw SQL kullanır, EF Core’un tracking ve change tracking mekanizması yoktur.
+DataReader üzerinden direkt entity mapping yapar.
+Büyük veri setlerinde EF’nin tracking overhead’ini tamamen bypass ettiği için çok daha hızlıdır.
