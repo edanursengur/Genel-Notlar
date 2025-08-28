@@ -1,0 +1,20 @@
+Middleware Nedir?
+
+ASP.NET Core’da Middleware, her gelen HTTP isteğini karşılayan pipeline halkaları gibidir.
+Bir request geldiğinde şu sıralamayla işler:
+
+Request → Middleware1 → Middleware2 → Middleware3 → ... → Controller/Action
+
+
+Her middleware:
+
+İsteği alır
+
+İsterse üzerinde işlem yapar (örn: kimlik kontrolü, logging, caching…)
+
+Sonraki middleware’e paslar
+
+Response dönerken de araya girebilir
+
+👉 Yani middleware, ortak yapılacak kontrolleri merkezi olarak tanımlamanı sağlar.
+Senin senaryonda: kullanıcı login değilse login modalını açmak → bu aslında tüm sayfalarda ortak bir kontrol → bu yüzden middleware en temiz çözüm.
