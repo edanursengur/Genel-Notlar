@@ -1,0 +1,2 @@
+Farklı roje aynakları kullanımında version sorunları genelde cacheden kaynaklanır. Cache temizlemek genellikle problemi çözer.
+Cache Temizliği: dotnet nuget locals all --clear
