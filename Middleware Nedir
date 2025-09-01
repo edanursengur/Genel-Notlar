@@ -17,4 +17,4 @@ Sonraki middleware’e paslar
 Response dönerken de araya girebilir
 
 👉 Yani middleware, ortak yapılacak kontrolleri merkezi olarak tanımlamanı sağlar.
-Senin senaryonda: kullanıcı login değilse login modalını açmak → bu aslında tüm sayfalarda ortak bir kontrol → bu yüzden middleware en temiz çözüm.
+Örneğin: Kullanıcı login değilse login modalını açmak → bu aslında tüm sayfalarda ortak bir kontrol → bu yüzden middleware en temiz çözüm.
